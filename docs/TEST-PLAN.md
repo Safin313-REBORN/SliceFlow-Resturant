@@ -1,4 +1,4 @@
-# SliceFlow — Comprehensive QA & Test Plan
+# SliceFlow : Comprehensive QA & Test Plan
 
 ## 1. Test Strategy Overview
 Quality assurance is structured across three verification tiers:

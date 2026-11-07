@@ -1,4 +1,4 @@
-# SliceFlow — Database Schema & Data Dictionary
+# SliceFlow : Database Schema & Data Dictionary
 
 SliceFlow utilizes MongoDB with Mongoose ODM. This document outlines the schema design, field constraints, relationships, and indexing strategies.
 

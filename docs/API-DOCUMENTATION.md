@@ -1,4 +1,4 @@
-# SliceFlow — REST API Documentation
+# SliceFlow : REST API Documentation
 
 Base URL: `/api`  
 Content-Type: `application/json`  

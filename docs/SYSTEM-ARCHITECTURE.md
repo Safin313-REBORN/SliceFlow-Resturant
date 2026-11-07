@@ -1,4 +1,4 @@
-# SliceFlow — System Architecture
+# SliceFlow : System Architecture
 
 ## Architecture Diagram
 

@@ -1,4 +1,4 @@
-# SliceFlow — Skill Activation & Usage Report
+# SliceFlow : Skill Activation & Usage Report
 
 This document records all specialized engineering skills activated and applied during the engineering of **SliceFlow** (Oasis Infobyte Internship Web Development Level 3 Task 1).
 

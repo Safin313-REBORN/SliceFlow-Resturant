@@ -1,4 +1,4 @@
-# SliceFlow — Implementation Plan
+# SliceFlow : Implementation Plan
 
 ## Project Overview
 **SliceFlow** is an enterprise-grade full-stack pizza delivery and inventory management web application built for Oasis Infobyte Internship (Web Development Level 3, Task 1). It combines a customer ordering platform featuring an interactive 4-step custom pizza builder, real-time order tracking, and Razorpay test payment integration with a backend and admin inventory control dashboard featuring two-phase stock reservations, transactional consistency, low-stock threshold monitoring, and cron-driven alerts.

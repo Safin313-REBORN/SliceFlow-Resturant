@@ -1,6 +1,6 @@
 # 🍕 SliceFlow-Resturant: Premium Full-Stack Pizza Delivery & Inventory Management Platform
 
-> **Oasis Infobyte Internship — Web Development & Designing**  
+> **Oasis Infobyte Internship: Web Development & Designing**  
 > **Level:** Level 3, Task 1 (Full-Stack Web Application)  
 > **Development Framework:** Production Full-Stack Engineering (MERN + Real-Time)  
 > **Target Stack:** React.js + Node.js + Express.js + MongoDB + Razorpay Test Mode + Socket.IO + Tailwind CSS  
@@ -111,7 +111,7 @@ Copy the template configuration:
 ```bash
 cp .env.example server/.env
 ```
-*(Default test settings are pre-configured. No external MongoDB cluster is required—an integrated MongoDB replica set boots automatically!)*
+*(Default test settings are pre-configured. No external MongoDB cluster is required: an integrated MongoDB replica set boots automatically!)*
 
 ### 3. Seed Database
 Seed standard signature pizzas, exactly 5 bases, 5 sauces, cheeses, vegetables, inventory ledger, and default credentials:
@@ -180,6 +180,6 @@ cd server && node scripts/e2e-browser-test.js
 ## 📄 License & Oasis Infobyte Submission Notice
 
 This repository represents the completed submission for:
-**Oasis Infobyte Internship Program — Web Development and Designing, Level 3 Task 1.**  
+**Oasis Infobyte Internship Program: Web Development and Designing, Level 3 Task 1.**  
 Developed with precision, security, and architectural integrity.
 

@@ -1,4 +1,4 @@
-# SliceFlow — Application Security & Concurrency Plan
+# SliceFlow : Application Security & Concurrency Plan
 
 ## 1. Threat Modeling & Defensive Controls
 

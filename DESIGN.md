@@ -1,4 +1,4 @@
-# DESIGN.md — SliceFlow Design Direction
+# DESIGN.md : SliceFlow Design Direction
 
 ## 1. Identity & Vibe
 - **Character**: Warm Artisan Neapolitan, Craft Pizzeria, Precision Kitchen

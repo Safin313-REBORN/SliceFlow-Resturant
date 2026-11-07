@@ -1,7 +1,7 @@
-# SliceFlow — Visual QA & Design Transformation Report
+# SliceFlow : Visual QA & Design Transformation Report
 
-**Project:** SliceFlow — Premium Full-Stack Pizza Delivery & Food-Tech Platform  
-**Program:** Oasis Infobyte Internship — Web Development (Level 3, Task 1)  
+**Project:** SliceFlow : Premium Full-Stack Pizza Delivery & Food-Tech Platform  
+**Program:** Oasis Infobyte Internship : Web Development (Level 3, Task 1)  
 **Evaluation Standard:** Commercial Production-Grade Web Application  
 **Design System:** Ember & Basil Editorial Restaurant Identity  
 **Typography:** *DM Serif Display* (Headings) + *Manrope* (Body & Micro-copy)  
