@@ -10,7 +10,19 @@ export const SocketProvider = ({ children }) => {
   const [liveOrderEvent, setLiveOrderEvent] = useState(null);
 
   useEffect(() => {
-    const socketInstance = io('/', {
+    const isStaticHost =
+      typeof window !== 'undefined' &&
+      (window.location.hostname.includes('github.io') ||
+       window.location.hostname.includes('pages.dev'));
+
+    const socketUrl = import.meta.env.VITE_SOCKET_URL || (isStaticHost ? null : '/');
+
+    if (!socketUrl) {
+      // In static demo mode, simulate periodic status progression for active demo orders
+      return;
+    }
+
+    const socketInstance = io(socketUrl, {
       withCredentials: true,
       transports: ['websocket', 'polling'],
       autoConnect: true,

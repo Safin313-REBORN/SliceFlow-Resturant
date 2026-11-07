@@ -36,7 +36,7 @@ import AdminMenuManagementPage from './pages/admin/AdminMenuManagementPage';
 function App() {
   return (
     <ThemeProvider>
-      <BrowserRouter>
+      <BrowserRouter basename={import.meta.env.BASE_URL}>
         <AuthProvider>
           <CartProvider>
             <SocketProvider>

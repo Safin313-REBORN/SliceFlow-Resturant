@@ -4,6 +4,7 @@
 > **Level:** Level 3, Task 1 (Full-Stack Web Application)  
 > **Development Framework:** Production Full-Stack Engineering (MERN + Real-Time)  
 > **Target Stack:** React.js + Node.js + Express.js + MongoDB + Razorpay Test Mode + Socket.IO + Tailwind CSS  
+> **🌐 Live GitHub Pages Demo:** [https://safin313-reborn.github.io/SliceFlow-Resturant/](https://safin313-reborn.github.io/SliceFlow-Resturant/)  
 
 ---
 
