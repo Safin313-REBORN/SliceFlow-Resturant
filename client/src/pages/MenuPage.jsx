@@ -87,31 +87,31 @@ const MenuPage = () => {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-10">
       {/* Editorial Page Header */}
-      <div className="text-center max-w-2xl mx-auto space-y-3">
+      <div className="text-center max-w-3xl mx-auto space-y-4">
         <span className="text-xs font-bold uppercase tracking-widest text-primary block">
           Complete Restaurant Catalogue
         </span>
-        <h1 className="font-display font-normal text-4xl sm:text-5xl text-espresso dark:text-dark-text tracking-tight transition-colors">
+        <h1 className="font-display font-normal text-4xl sm:text-6xl text-espresso dark:text-[#FAF6EF] tracking-tight transition-colors">
           The SliceFlow Kitchen Menu
         </h1>
-        <p className="text-sm text-espresso-muted dark:text-dark-muted leading-relaxed font-sans transition-colors">
+        <p className="text-base sm:text-lg text-espresso-muted dark:text-[#A3B8AC] leading-relaxed font-sans transition-colors">
           Explore handcrafted Neapolitan pizzas, smashed Angus beef burgers, slow-simmered pastas, crispy wings, and chilled craft coolers.
         </p>
       </div>
 
       {/* Filter and Category Navigation Bar */}
-      <div className="bg-white dark:bg-dark-card p-5 sm:p-6 rounded-3xl border border-ivory-border dark:border-dark-border shadow-card space-y-5 transition-colors">
+      <div className="bg-white dark:bg-dark-card p-5 sm:p-7 rounded-3xl border border-ivory-border dark:border-dark-border shadow-card space-y-6 transition-colors">
         {/* Category Pills */}
-        <div className="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none">
+        <div className="flex items-center gap-2.5 overflow-x-auto pb-2 scrollbar-none">
           {categories.map((cat) => (
             <button
               key={cat.id}
               type="button"
               onClick={() => handleCategorySelect(cat.id)}
-              className={`min-h-[44px] px-4 py-2.5 rounded-2xl text-xs font-bold tracking-wide whitespace-nowrap transition-all flex items-center gap-1.5 cursor-pointer ${
+              className={`min-h-[44px] px-5 py-2.5 rounded-2xl text-xs sm:text-sm font-bold tracking-wide whitespace-nowrap transition-all flex items-center gap-2 cursor-pointer ${
                 selectedCategory === cat.id
-                  ? 'bg-forest text-white shadow-md scale-105'
-                  : 'bg-ivory-soft dark:bg-dark-surface text-espresso dark:text-dark-text hover:bg-ivory-border/70 dark:hover:bg-dark-border hover:scale-102 border border-ivory-border dark:border-dark-border active:scale-95'
+                  ? 'bg-primary text-white shadow-glow scale-102 font-extrabold'
+                  : 'bg-ivory-soft dark:bg-dark-surface text-espresso dark:text-[#FAF6EF] hover:bg-ivory-border/70 dark:hover:bg-dark-border hover:scale-102 border border-ivory-border dark:border-dark-border active:scale-95'
               }`}
             >
               <span>{cat.label}</span>
@@ -161,9 +161,9 @@ const MenuPage = () => {
                 placeholder="Search menu or ingredients..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-9 pr-8 py-2 rounded-xl border border-ivory-border dark:border-dark-border text-xs focus:outline-none focus:ring-2 focus:ring-primary bg-ivory-soft dark:bg-dark-surface text-espresso dark:text-dark-text placeholder-espresso-muted dark:placeholder-dark-muted transition-colors"
+                className="w-full pl-10 pr-9 py-2.5 rounded-2xl border border-ivory-border dark:border-dark-border text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-primary bg-ivory-soft dark:bg-dark-surface text-espresso dark:text-[#FAF6EF] placeholder-espresso-muted dark:placeholder-dark-muted transition-colors"
               />
-              <Search className="w-4 h-4 text-espresso-muted dark:text-dark-muted absolute left-3 top-2.5" />
+              <Search className="w-4 h-4 text-espresso-muted dark:text-dark-muted absolute left-3.5 top-3" />
               {searchQuery && (
                 <button
                   type="button"
@@ -173,9 +173,9 @@ const MenuPage = () => {
                     setSearchParams(searchParams);
                     fetchItems();
                   }}
-                  className="absolute right-2.5 top-2.5 text-espresso-muted hover:text-espresso dark:text-dark-muted dark:hover:text-dark-text"
+                  className="absolute right-3 top-3 text-espresso-muted hover:text-espresso dark:text-dark-muted dark:hover:text-[#FAF6EF]"
                 >
-                  <X className="w-3.5 h-3.5" />
+                  <X className="w-4 h-4" />
                 </button>
               )}
             </form>
@@ -183,7 +183,7 @@ const MenuPage = () => {
             <select
               value={sortBy}
               onChange={(e) => setSortBy(e.target.value)}
-              className="w-full sm:w-auto px-3.5 py-2 rounded-xl border border-ivory-border dark:border-dark-border text-xs focus:outline-none focus:ring-2 focus:ring-primary bg-ivory-soft dark:bg-dark-surface font-bold text-espresso dark:text-dark-text cursor-pointer transition-colors"
+              className="w-full sm:w-auto px-4 py-2.5 rounded-2xl border border-ivory-border dark:border-dark-border text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-primary bg-ivory-soft dark:bg-dark-surface font-bold text-espresso dark:text-[#FAF6EF] cursor-pointer transition-colors"
             >
               <option value="popular">Most Popular ★</option>
               <option value="price_asc">Price: Low to High</option>
@@ -196,9 +196,9 @@ const MenuPage = () => {
 
       {/* Results Header */}
       {!loading && (
-        <div className="flex items-center justify-between text-xs font-bold text-espresso-muted dark:text-dark-muted px-1">
+        <div className="flex items-center justify-between text-xs sm:text-sm font-bold text-espresso-muted dark:text-[#A3B8AC] px-1">
           <span>
-            Showing <strong className="text-espresso dark:text-dark-text">{displayedItems.length}</strong> items in{' '}
+            Showing <strong className="text-espresso dark:text-[#FAF6EF]">{displayedItems.length}</strong> items in{' '}
             <span className="text-primary">{selectedCategory === 'All' ? 'Complete Menu' : selectedCategory}</span>
           </span>
           {(dietaryFilter !== 'All' || spiceFilter || searchQuery) && (

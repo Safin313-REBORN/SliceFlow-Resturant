@@ -23,7 +23,7 @@ const Button = ({
     gradient:
       'bg-gradient-ember text-white shadow-glow hover:shadow-card hover:-translate-y-0.5 font-extrabold btn-shine',
     forest:
-      'bg-forest hover:bg-forest-hover text-white shadow-sm hover:shadow-card hover:-translate-y-0.5',
+      'bg-forest hover:bg-forest-hover text-white shadow-sm hover:shadow-card hover:-translate-y-0.5 dark:bg-[#1C3024] dark:hover:bg-[#254231] dark:border dark:border-forest/60 dark:shadow-md',
     honey:
       'bg-honey hover:bg-honey-hover text-forest shadow-sm hover:shadow-glow hover:-translate-y-0.5 font-bold',
     secondary:

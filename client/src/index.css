@@ -26,13 +26,21 @@
     color: #FAF6EF;
   }
   h1 {
-    @apply font-display tracking-tight text-[#29221E] dark:text-[#FAF6EF];
+    @apply font-display tracking-tight text-[#29221E];
   }
   h2 {
-    @apply font-display tracking-tight text-[#29221E] dark:text-[#FAF6EF];
+    @apply font-display tracking-tight text-[#29221E];
   }
   h3, h4, h5, h6 {
-    @apply font-sans font-bold tracking-tight text-[#29221E] dark:text-[#FAF6EF];
+    @apply font-sans font-bold tracking-tight text-[#29221E];
+  }
+  html.dark h1,
+  html.dark h2,
+  html.dark h3,
+  html.dark h4,
+  html.dark h5,
+  html.dark h6 {
+    color: #FAF6EF !important;
   }
 
   /* Anti-slop R-39: Explicit Interaction Affordances in Base Layer */
@@ -291,75 +299,81 @@ html.dark ::-webkit-scrollbar-thumb {
   }
 }
 
-/* Bulletproof Brand Utility Classes */
-.bg-forest {
-  background-color: #263E32 !important;
-}
-.bg-forest-hover:hover {
-  background-color: #1B2E24 !important;
-}
-.bg-forest-light {
-  background-color: #EBF2EE !important;
-}
-.bg-forest-dark {
-  background-color: #14221A !important;
-}
-.text-forest {
-  color: #263E32 !important;
-}
-.border-forest {
-  border-color: #263E32 !important;
-}
-.border-forest-dark {
-  border-color: #14221A !important;
+/* Robust Light & Dark Theme System */
+.text-espresso {
+  color: #29221E;
 }
 
-.bg-primary {
-  background-color: #D95732 !important;
-}
-.bg-primary-hover:hover {
-  background-color: #B84322 !important;
-}
-.bg-primary-light {
-  background-color: #FBF0EC !important;
-}
-.text-primary {
-  color: #D95732 !important;
-}
-.border-primary {
-  border-color: #D95732 !important;
-}
-
-.bg-honey {
-  background-color: #E5B75C !important;
-}
-.bg-honey-hover:hover {
-  background-color: #D4A345 !important;
-}
-.bg-honey-light {
-  background-color: #FBF6EA !important;
-}
-.text-honey {
-  color: #E5B75C !important;
+.text-espresso-muted {
+  color: #83766D;
 }
 
 .bg-ivory {
-  background-color: #FAF6EF !important;
-}
-.bg-ivory-soft {
-  background-color: #F1E9DE !important;
-}
-.text-ivory {
-  color: #FAF6EF !important;
-}
-.border-ivory-border {
-  border-color: #E8DFC8 !important;
+  background-color: #FAF6EF;
 }
 
-.text-espresso {
-  color: #29221E !important;
+.bg-ivory-soft {
+  background-color: #F1E9DE;
 }
-.text-espresso-muted {
-  color: #83766D !important;
+
+.border-ivory-border {
+  border-color: #E8DFC8;
+}
+
+/* High-Contrast Dark Mode Overrides (WCAG AAA Compliance) */
+html.dark {
+  color-scheme: dark;
+  background-color: #0E1612;
+  color: #FAF6EF;
+}
+
+html.dark body {
+  background-color: #0E1612;
+  color: #FAF6EF;
+}
+
+html.dark h1,
+html.dark h2,
+html.dark h3,
+html.dark h4,
+html.dark h5,
+html.dark h6 {
+  color: #FAF6EF;
+}
+
+html.dark .text-espresso {
+  color: #FAF6EF !important;
+}
+
+html.dark .text-espresso-muted {
+  color: #A3B8AC !important;
+}
+
+html.dark .bg-ivory {
+  background-color: #0E1612 !important;
+}
+
+html.dark .bg-ivory-soft {
+  background-color: #15221B !important;
+}
+
+html.dark .border-ivory-border {
+  border-color: #24352B !important;
+}
+
+html.dark .bg-white {
+  background-color: #1A2920 !important;
+}
+
+html.dark .bg-white\/90 {
+  background-color: rgba(26, 41, 32, 0.9) !important;
+}
+
+html.dark .bg-white\/80 {
+  background-color: rgba(26, 41, 32, 0.8) !important;
+}
+
+html.dark .bg-white\/10 {
+  background-color: rgba(255, 255, 255, 0.12) !important;
 }
 

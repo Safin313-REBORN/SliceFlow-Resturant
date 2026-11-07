@@ -55,32 +55,32 @@ const HomePage = () => {
   return (
     <div className="space-y-24 pb-20">
       {/* 1. Large Editorial Split Hero */}
-      <section className="relative overflow-hidden pt-8 pb-16 lg:pt-16 lg:pb-24 bg-[#FAF6EF] dark:bg-dark-bg transition-colors duration-300">
+      <section className="relative overflow-hidden pt-8 pb-16 lg:pt-14 lg:pb-24 bg-ivory dark:bg-[#0E1612] transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-12 items-center">
             {/* Left Column: Editorial Headline & Actions */}
-            <div className="lg:col-span-6 space-y-6 text-center lg:text-left animate-fade-in">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-primary-light/80 dark:bg-primary/20 text-primary border border-primary/20 text-xs font-bold tracking-wide">
-                <Flame className="w-3.5 h-3.5 fill-current" />
+            <div className="lg:col-span-7 space-y-8 text-center lg:text-left animate-fade-in">
+              <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-primary-light/90 dark:bg-primary/20 text-primary dark:text-primary-light border border-primary/20 text-xs sm:text-sm font-bold tracking-wide">
+                <Flame className="w-4 h-4 fill-current text-primary" />
                 <span>Wood-Fired Pizzeria & Gourmet Kitchen</span>
               </div>
 
-              <h1 className="font-display font-normal text-4xl sm:text-6xl lg:text-7xl text-espresso dark:text-dark-text leading-[1.08] tracking-tight transition-colors">
+              <h1 className="font-display font-normal text-5xl sm:text-6xl md:text-7xl lg:text-7xl xl:text-8xl text-espresso dark:text-[#FAF6EF] leading-[1.04] tracking-tight transition-colors">
                 Good Food.{' '}
                 <span className="italic block font-serif font-normal text-primary">Great Moments.</span>
                 <span className="block">Made Fresh.</span>
               </h1>
 
-              <p className="text-base sm:text-lg text-espresso-muted dark:text-dark-muted max-w-xl mx-auto lg:mx-0 leading-relaxed font-sans transition-colors">
-                From handcrafted sourdough pizzas to smash burgers and rich pasta, order kitchen-fresh meals prepared to order.
+              <p className="text-lg sm:text-xl text-espresso-muted dark:text-[#A3B8AC] max-w-2xl mx-auto lg:mx-0 leading-relaxed font-sans transition-colors">
+                From 48-hour cold-fermented sourdough pizzas to double-smashed Angus burgers, handmade pasta, and decadent desserts: ordered fresh to your table.
               </p>
 
               <div className="pt-2 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
                 <Link to="/menu" className="w-full sm:w-auto">
                   <Button
                     variant="gradient"
-                    size="lg"
-                    className="w-full sm:w-auto shadow-glow flex items-center justify-center"
+                    size="xl"
+                    className="w-full sm:w-auto shadow-glow flex items-center justify-center px-8 text-base"
                   >
                     <span>Explore Our Menu</span>
                   </Button>
@@ -89,74 +89,76 @@ const HomePage = () => {
                 <Link to="/build" className="w-full sm:w-auto">
                   <Button
                     variant="forest"
-                    size="lg"
-                    className="w-full sm:w-auto shadow-sm flex items-center justify-center gap-2"
+                    size="xl"
+                    className="w-full sm:w-auto shadow-sm flex items-center justify-center gap-2.5 px-8 text-base"
                   >
-                    <ChefHat className="w-4 h-4 text-honey" />
+                    <ChefHat className="w-5 h-5 text-honey" />
                     <span>Build Your Pizza</span>
                   </Button>
                 </Link>
               </div>
 
               {/* Highlights Pill Row: Concrete kitchen data */}
-              <div className="pt-6 grid grid-cols-3 gap-4 border-t border-ivory-border dark:border-dark-border max-w-lg mx-auto lg:mx-0 transition-colors">
+              <div className="pt-8 grid grid-cols-3 gap-6 border-t border-ivory-border dark:border-dark-border max-w-xl mx-auto lg:mx-0 transition-colors">
                 <div>
-                  <p className="font-display font-bold text-2xl text-espresso dark:text-dark-text">450°C</p>
-                  <p className="text-xs text-espresso-muted dark:text-dark-muted font-medium">Stone Hearth Oven</p>
+                  <p className="font-display font-bold text-3xl sm:text-4xl text-espresso dark:text-[#FAF6EF]">450°C</p>
+                  <p className="text-xs sm:text-sm text-espresso-muted dark:text-[#A3B8AC] font-semibold mt-1">Stone Hearth Oven</p>
                 </div>
                 <div>
-                  <p className="font-display font-bold text-2xl text-espresso dark:text-dark-text">48h</p>
-                  <p className="text-xs text-espresso-muted dark:text-dark-muted font-medium">Slow Sourdough Rest</p>
+                  <p className="font-display font-bold text-3xl sm:text-4xl text-espresso dark:text-[#FAF6EF]">48h</p>
+                  <p className="text-xs sm:text-sm text-espresso-muted dark:text-[#A3B8AC] font-semibold mt-1">Slow Sourdough Rest</p>
                 </div>
                 <div>
-                  <p className="font-display font-bold text-2xl text-espresso dark:text-dark-text">30 Min</p>
-                  <p className="text-xs text-espresso-muted dark:text-dark-muted font-medium">Hot Delivery Target</p>
+                  <p className="font-display font-bold text-3xl sm:text-4xl text-espresso dark:text-[#FAF6EF]">30 Min</p>
+                  <p className="text-xs sm:text-sm text-espresso-muted dark:text-[#A3B8AC] font-semibold mt-1">Hot Delivery Target</p>
                 </div>
               </div>
             </div>
 
             {/* Right Column: Heroic Editorial Food Photography */}
-            <div className="lg:col-span-6 relative flex items-center justify-center animate-slide-up">
-              <div className="relative w-full max-w-lg">
+            <div className="lg:col-span-5 relative flex items-center justify-center animate-slide-up">
+              <div className="relative w-full max-w-xl lg:max-w-none">
                 {/* Main Large Food Image: Anti-slop R-40 compliant with explicit width, height and fetchpriority */}
-                <div className="relative rounded-[2.5rem] overflow-hidden shadow-modal border-4 border-white dark:border-dark-border bg-ivory-soft dark:bg-dark-surface aspect-[4/3] transition-colors">
+                <div className="relative rounded-[2.5rem] overflow-hidden shadow-2xl border-4 border-white dark:border-dark-border bg-ivory-soft dark:bg-dark-surface aspect-[4/3] lg:aspect-[5/4] transition-colors">
                   <img
-                    src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=1000&q=85"
+                    src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=1200&q=85"
                     alt="Handcrafted artisan pizza fresh from stone oven"
-                    width="1000"
-                    height="750"
+                    width="1200"
+                    height="960"
                     fetchPriority="high"
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover scale-102 hover:scale-105 transition-transform duration-700"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-espresso/40 via-transparent to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
                 </div>
 
                 {/* Floating Dish Badge 1: Burger Spotlight */}
-                <div className="absolute -bottom-6 -left-4 sm:-left-6 bg-white/95 dark:bg-dark-card/95 backdrop-blur-md p-3.5 rounded-2xl shadow-card hover:shadow-hover border border-ivory-border dark:border-dark-border flex items-center gap-3.5 max-w-xs cursor-pointer transition-all">
+                <div className="absolute -bottom-6 -left-4 sm:-left-6 bg-white/95 dark:bg-[#15221B]/95 backdrop-blur-md p-4 rounded-3xl shadow-2xl border border-ivory-border dark:border-[#283D31] flex items-center gap-4 max-w-xs cursor-pointer transition-transform hover:scale-105">
                   <img
                     src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=300&q=80"
                     alt="Gourmet smash burger"
-                    width="56"
-                    height="56"
-                    className="w-14 h-14 rounded-xl object-cover shrink-0"
+                    width="64"
+                    height="64"
+                    className="w-16 h-16 rounded-2xl object-cover shrink-0 shadow-sm"
                   />
                   <div>
-                    <span className="text-[10px] font-bold uppercase tracking-wider text-primary">
+                    <span className="text-[11px] font-bold uppercase tracking-wider text-primary dark:text-honey">
                       Signature Pick
                     </span>
-                    <h4 className="text-xs font-bold text-espresso dark:text-dark-text leading-tight">
+                    <h4 className="text-sm font-bold text-espresso dark:text-[#FAF6EF] leading-tight">
                       Classic Smash Burger
                     </h4>
-                    <p className="text-xs font-extrabold text-espresso dark:text-dark-text mt-0.5">₹329</p>
+                    <p className="text-sm font-extrabold text-espresso dark:text-honey mt-0.5">₹329</p>
                   </div>
                 </div>
 
                 {/* Floating Rating Pill 2 */}
-                <div className="absolute -top-4 -right-4 bg-forest text-white px-4 py-2.5 rounded-2xl shadow-card border border-forest-light flex items-center gap-2 cursor-pointer transition-all">
-                  <Star className="w-4 h-4 text-honey fill-honey" />
+                <div className="absolute -top-5 -right-4 bg-forest dark:bg-[#1C2E25] text-white px-5 py-3 rounded-2xl shadow-2xl border border-white/20 dark:border-honey/40 flex items-center gap-3 cursor-pointer transition-transform hover:scale-105">
+                  <div className="w-9 h-9 rounded-xl bg-honey/20 flex items-center justify-center">
+                    <Star className="w-5 h-5 text-honey fill-honey" />
+                  </div>
                   <div>
-                    <p className="text-xs font-bold leading-none">Artisan Kitchen</p>
-                    <p className="text-[10px] text-white/70">Wood-Fired Daily</p>
+                    <p className="text-sm font-bold leading-tight text-white">Artisan Kitchen</p>
+                    <p className="text-xs text-honey font-semibold">Wood-Fired Daily</p>
                   </div>
                 </div>
               </div>

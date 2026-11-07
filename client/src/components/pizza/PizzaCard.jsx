@@ -54,7 +54,7 @@ const PizzaCard = ({ pizza }) => {
         className="bg-white dark:bg-dark-card rounded-3xl border border-ivory-border dark:border-dark-border overflow-hidden shadow-subtle hover-lift flex flex-col group cursor-pointer transition-all duration-300 hover:border-primary/50 dark:hover:border-primary/50 relative"
       >
         {/* Food Image Container */}
-        <div className="relative h-56 overflow-hidden bg-ivory-soft dark:bg-dark-surface">
+        <div className="relative h-64 sm:h-60 lg:h-64 overflow-hidden bg-ivory-soft dark:bg-dark-surface">
           <img
             src={pizza.image}
             alt={pizza.name}
@@ -71,7 +71,7 @@ const PizzaCard = ({ pizza }) => {
           <div className="absolute top-3.5 left-3.5 flex items-center gap-1.5 flex-wrap">
             <span
               className={`px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider border shadow-sm ${
-                categoryPills[pizza.category] || 'bg-ivory-soft text-espresso border-ivory-border dark:bg-dark-surface dark:text-dark-text'
+                categoryPills[pizza.category] || 'bg-ivory-soft text-espresso border-ivory-border dark:bg-dark-surface dark:text-[#FAF6EF]'
               }`}
             >
               {pizza.category}
@@ -96,7 +96,7 @@ const PizzaCard = ({ pizza }) => {
             className={`absolute top-3.5 right-3.5 w-11 h-11 rounded-full flex items-center justify-center backdrop-blur-md transition-all shadow-sm cursor-pointer ${
               wishlisted
                 ? 'bg-primary text-white scale-110 animate-heart-beat'
-                : 'bg-white/90 dark:bg-dark-surface/90 text-espresso dark:text-dark-text hover:text-primary hover:bg-white active:scale-90'
+                : 'bg-white/90 dark:bg-dark-surface/90 text-espresso dark:text-[#FAF6EF] hover:text-primary hover:bg-white active:scale-90'
             }`}
             aria-label="Add to favorites"
           >
@@ -119,29 +119,29 @@ const PizzaCard = ({ pizza }) => {
         </div>
 
         {/* Card Body */}
-        <div className="p-5 flex-1 flex flex-col justify-between space-y-4">
+        <div className="p-5 sm:p-6 flex-1 flex flex-col justify-between space-y-4">
           <div>
             <div className="flex items-start justify-between gap-2">
-              <h3 className="font-sans font-bold text-lg text-espresso dark:text-dark-text group-hover:text-primary transition-colors leading-snug">
+              <h3 className="font-sans font-bold text-xl text-espresso dark:text-[#FAF6EF] group-hover:text-primary transition-colors leading-snug">
                 {pizza.name}
               </h3>
             </div>
 
-            <p className="text-xs text-espresso-muted dark:text-dark-muted mt-2 line-clamp-2 leading-relaxed font-sans">
+            <p className="text-sm text-espresso-muted dark:text-[#A3B8AC] mt-2 line-clamp-2 leading-relaxed font-sans">
               {pizza.description}
             </p>
 
             {/* Tags / Portions */}
-            <div className="flex items-center gap-2 mt-3 text-[11px] text-espresso-muted dark:text-dark-muted flex-wrap">
+            <div className="flex items-center gap-2 mt-3 text-xs text-espresso-muted dark:text-[#A3B8AC] flex-wrap">
               {pizza.portionInformation && (
-                <span className="px-2 py-0.5 rounded-md bg-ivory-soft dark:bg-dark-surface border border-ivory-border dark:border-dark-border font-medium text-espresso dark:text-dark-text">
+                <span className="px-2.5 py-1 rounded-md bg-ivory-soft dark:bg-dark-surface border border-ivory-border dark:border-dark-border font-semibold text-espresso dark:text-[#FAF6EF]">
                   {pizza.portionInformation}
                 </span>
               )}
               {pizza.dietaryTags?.slice(0, 2).map((tag) => (
                 <span
                   key={tag}
-                  className="px-2 py-0.5 rounded-md bg-forest-light dark:bg-forest/20 text-forest dark:text-emerald-400 font-semibold"
+                  className="px-2.5 py-1 rounded-md bg-forest-light dark:bg-forest/20 text-forest dark:text-emerald-400 font-semibold"
                 >
                   {tag}
                 </span>
@@ -150,24 +150,24 @@ const PizzaCard = ({ pizza }) => {
           </div>
 
           {/* Pricing & Actions */}
-          <div className="pt-3 border-t border-ivory-border dark:border-dark-border flex items-center justify-between gap-2">
+          <div className="pt-4 border-t border-ivory-border dark:border-dark-border flex items-center justify-between gap-2">
             <div>
-              <span className="text-[10px] uppercase font-bold tracking-wider text-espresso-muted dark:text-dark-muted block">
+              <span className="text-[11px] uppercase font-bold tracking-wider text-espresso-muted dark:text-[#A3B8AC] block">
                 Price
               </span>
-              <span className="font-sans font-extrabold text-2xl text-espresso dark:text-dark-text tracking-tight">
+              <span className="font-sans font-extrabold text-2xl sm:text-3xl text-espresso dark:text-[#FAF6EF] tracking-tight">
                 ₹{pizza.basePrice}
               </span>
             </div>
 
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2.5">
               <button
                 type="button"
                 onClick={(e) => {
                   e.stopPropagation();
                   setModalOpen(true);
                 }}
-                className="min-w-[44px] min-h-[44px] flex items-center justify-center p-2.5 rounded-2xl border border-ivory-border dark:border-dark-border bg-ivory-soft dark:bg-dark-surface hover:bg-white dark:hover:bg-dark-card text-espresso dark:text-dark-text hover:text-primary dark:hover:text-primary transition-colors cursor-pointer active:scale-95"
+                className="min-w-[44px] min-h-[44px] flex items-center justify-center p-2.5 rounded-2xl border border-ivory-border dark:border-dark-border bg-ivory-soft dark:bg-dark-surface hover:bg-white dark:hover:bg-dark-card text-espresso dark:text-[#FAF6EF] hover:text-primary dark:hover:text-primary transition-colors cursor-pointer active:scale-95"
                 title="View detailed portions & ingredients"
                 aria-label="View details"
               >
@@ -177,20 +177,20 @@ const PizzaCard = ({ pizza }) => {
               <button
                 type="button"
                 onClick={handleQuickAdd}
-                className={`min-h-[44px] py-2.5 px-4 rounded-2xl text-xs font-bold transition-all shadow-sm flex items-center justify-center gap-1.5 active:scale-95 cursor-pointer btn-shine ${
+                className={`min-h-[44px] py-2.5 px-5 rounded-2xl text-sm font-bold transition-all shadow-sm flex items-center justify-center gap-1.5 active:scale-95 cursor-pointer btn-shine ${
                   added
-                    ? 'bg-forest text-white animate-badge-pop shadow-md scale-105'
+                    ? 'bg-status-success text-white animate-badge-pop shadow-md scale-105'
                     : 'bg-primary hover:bg-primary-hover text-white hover:shadow-hover hover:-translate-y-0.5'
                 }`}
               >
                 {added ? (
                   <>
-                    <Check className="w-3.5 h-3.5 stroke-[3]" />
+                    <Check className="w-4 h-4 stroke-[3]" />
                     <span>Added</span>
                   </>
                 ) : (
                   <>
-                    <Plus className="w-3.5 h-3.5 stroke-[2.5]" />
+                    <Plus className="w-4 h-4 stroke-[2.5]" />
                     <span>Quick Add</span>
                   </>
                 )}
