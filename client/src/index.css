@@ -1,0 +1,365 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Manrope:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600;1,700&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    color: #29221E;
+    background-color: #FAF6EF;
+    font-family: 'Plus Jakarta Sans', 'Manrope', system-ui, -apple-system, sans-serif;
+  }
+  body {
+    @apply bg-[#FAF6EF] text-[#29221E] min-h-screen overflow-x-hidden font-sans transition-colors duration-300;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+  html.dark {
+    color: #FAF6EF;
+    background-color: #0E1612;
+  }
+  html.dark body {
+    background-color: #0E1612;
+    color: #FAF6EF;
+  }
+  h1 {
+    @apply font-display tracking-tight text-[#29221E] dark:text-[#FAF6EF];
+  }
+  h2 {
+    @apply font-display tracking-tight text-[#29221E] dark:text-[#FAF6EF];
+  }
+  h3, h4, h5, h6 {
+    @apply font-sans font-bold tracking-tight text-[#29221E] dark:text-[#FAF6EF];
+  }
+
+  /* Anti-slop R-39: Explicit Interaction Affordances in Base Layer */
+  a[href],
+  button,
+  summary,
+  select,
+  label[for],
+  input[type="checkbox"],
+  input[type="radio"],
+  [role="button"],
+  [role="tab"],
+  [role="switch"] {
+    cursor: pointer;
+  }
+
+  button:disabled,
+  input:disabled,
+  select:disabled,
+  textarea:disabled,
+  [aria-disabled="true"] {
+    cursor: not-allowed;
+  }
+
+  /* Anti-slop R-32: Accessible Keyboard Focus Rings */
+  :focus-visible {
+    outline: 2px solid #D95732;
+    outline-offset: 2px;
+  }
+  html.dark :focus-visible {
+    outline: 2px solid #E5B75C;
+    outline-offset: 2px;
+  }
+}
+
+/* Anti-slop R-39: Respect prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #FAF6EF;
+}
+html.dark ::-webkit-scrollbar-track {
+  background: #0E1612;
+}
+::-webkit-scrollbar-thumb {
+  background: #E8DFC8;
+  border-radius: 4px;
+}
+html.dark ::-webkit-scrollbar-thumb {
+  background: #283D31;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #D95732;
+}
+
+/* Luxury Ember & Forest Gradients */
+.bg-gradient-ember {
+  background: linear-gradient(135deg, #D95732 0%, #E66E4E 48%, #E5B75C 100%) !important;
+}
+
+.bg-gradient-forest {
+  background: linear-gradient(135deg, #1C2E25 0%, #263E32 50%, #121E17 100%) !important;
+}
+
+.text-gradient-ember {
+  background: linear-gradient(135deg, #D95732 0%, #E5B75C 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Animated Button Sheen / Specular Sweep */
+.btn-shine {
+  position: relative;
+  overflow: hidden;
+}
+.btn-shine::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -70%;
+  width: 45%;
+  height: 200%;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.32) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: rotate(25deg);
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+}
+.btn-shine:hover::after {
+  transform: rotate(25deg) translate(450%, 0);
+}
+
+/* Fluid Hover & Micro-interaction Classes */
+.hover-lift {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.hover-lift:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 36px -4px rgba(41, 34, 30, 0.12), 0 8px 16px -4px rgba(217, 87, 50, 0.08);
+}
+
+.hover-scale {
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.hover-scale:hover {
+  transform: scale(1.025);
+}
+
+/* Animated Candy-cane Stripes for Live Order & Progress */
+.bg-stripes {
+  background-image: linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.18) 25%,
+    transparent 25%,
+    transparent 50%,
+    rgba(255, 255, 255, 0.18) 50%,
+    rgba(255, 255, 255, 0.18) 75%,
+    transparent 75%,
+    transparent
+  );
+  background-size: 24px 24px;
+  animation: progressStripes 1.2s linear infinite;
+}
+
+/* Keyframes */
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes floatGentle {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-7px) rotate(0.6deg);
+  }
+}
+
+@keyframes floatReverse {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(7px) rotate(-0.6deg);
+  }
+}
+
+@keyframes pulseRing {
+  0% {
+    transform: scale(0.92);
+    box-shadow: 0 0 0 0 rgba(50, 122, 80, 0.65);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 10px rgba(50, 122, 80, 0);
+  }
+  100% {
+    transform: scale(0.92);
+    box-shadow: 0 0 0 0 rgba(50, 122, 80, 0);
+  }
+}
+
+@keyframes glowPulse {
+  0%, 100% {
+    box-shadow: 0 4px 18px rgba(217, 87, 50, 0.28);
+  }
+  50% {
+    box-shadow: 0 8px 28px rgba(217, 87, 50, 0.48);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes heartBeat {
+  0% { transform: scale(1); }
+  25% { transform: scale(1.35); }
+  50% { transform: scale(0.92); }
+  75% { transform: scale(1.18); }
+  100% { transform: scale(1); }
+}
+
+@keyframes badgePop {
+  0% { transform: scale(0.65); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes progressStripes {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 48px 0;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.94);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Bulletproof Brand Utility Classes */
+.bg-forest {
+  background-color: #263E32 !important;
+}
+.bg-forest-hover:hover {
+  background-color: #1B2E24 !important;
+}
+.bg-forest-light {
+  background-color: #EBF2EE !important;
+}
+.bg-forest-dark {
+  background-color: #14221A !important;
+}
+.text-forest {
+  color: #263E32 !important;
+}
+.border-forest {
+  border-color: #263E32 !important;
+}
+.border-forest-dark {
+  border-color: #14221A !important;
+}
+
+.bg-primary {
+  background-color: #D95732 !important;
+}
+.bg-primary-hover:hover {
+  background-color: #B84322 !important;
+}
+.bg-primary-light {
+  background-color: #FBF0EC !important;
+}
+.text-primary {
+  color: #D95732 !important;
+}
+.border-primary {
+  border-color: #D95732 !important;
+}
+
+.bg-honey {
+  background-color: #E5B75C !important;
+}
+.bg-honey-hover:hover {
+  background-color: #D4A345 !important;
+}
+.bg-honey-light {
+  background-color: #FBF6EA !important;
+}
+.text-honey {
+  color: #E5B75C !important;
+}
+
+.bg-ivory {
+  background-color: #FAF6EF !important;
+}
+.bg-ivory-soft {
+  background-color: #F1E9DE !important;
+}
+.text-ivory {
+  color: #FAF6EF !important;
+}
+.border-ivory-border {
+  border-color: #E8DFC8 !important;
+}
+
+.text-espresso {
+  color: #29221E !important;
+}
+.text-espresso-muted {
+  color: #83766D !important;
+}
+
